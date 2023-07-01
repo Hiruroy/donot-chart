@@ -1,0 +1,270 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: rgb(38, 0, 84);
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  font-family: poppins;
+}
+input {
+  display: none;
+}
+.piechart {
+  padding: 10px;
+  display: flex;
+  width: 250px;
+  overflow: hidden;
+  position: relative;
+}
+input:checked ~ .piechart {
+  width: 500px;
+  overflow: visible;
+  transform: 0.4s !important;
+}
+.piechart .piechartleft {
+  background: linear-gradient(135deg, rgb(224, 224, 224) 5%, white 0%);
+  text-align: center;
+  padding: 30px;
+}
+.piechart .piechartleft .text {
+  margin-top: 23px;
+  font-size: 18px;
+  color: rgb(103, 103, 103);
+}
+.piechart .piechartright {
+  text-align: center;
+  padding: 30px;
+  width: 240px;
+  position: relative;
+  z-index: -3;
+  transition: 0.4s;
+}
+.piechart .close {
+  width: 40px;
+  height: 40px;
+
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 999;
+  cursor: pointer;
+}
+#close:checked .piechart .piechartright {
+  transform: translateX(-100%);
+  width: 0px;
+  overflow: hidden;
+}
+.piechart .piechartright .tastycard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(img/pinkcard.png);
+  background-size: 100% 100%;
+  transition: 0.4s;
+  transform: translateX(-100%);
+}
+.piechart .piechartright .tastycard2 {
+  background: url(img/orangecard.png);
+  background-size: 100% 100%;
+}
+.piechart .piechartright .tastycard3 {
+  background: url(img/yellowcard.png);
+  background-size: 100% 100%;
+}
+.piechart .piechartright .tastycard4 {
+  background: url(img/bluecard.png);
+  background-size: 100% 100%;
+}
+.piechart .piechartright .tastycard5 {
+  background: url(img/bluecard.png);
+  background-size: 100% 100%;
+  filter: hue-rotate(260deg);
+}
+.piechart .piechartright .tastycard6 {
+  background: url(img/yellowcard.png);
+  background-size: 100% 100%;
+  filter: hue-rotate(-20deg);
+}
+
+#pink:checked ~ .piechart .piechartright .tastycard1 {
+  transform: translateX(0%);
+}
+#orangered:checked ~ .piechart .piechartright .tastycard2 {
+  transform: translateX(0%);
+}
+#yellow:checked ~ .piechart .piechartright .tastycard3 {
+  transform: translateX(0%);
+}
+#blue:checked ~ .piechart .piechartright .tastycard4 {
+  transform: translateX(0%);
+}
+#lime:checked ~ .piechart .piechartright .tastycard5 {
+  transform: translateX(0%);
+}
+#orange:checked ~ .piechart .piechartright .tastycard6 {
+  transform: translateX(0%);
+}
+
+.piechart .piechartleft .circle {
+  width: 180px;
+  height: 180px;
+  background-color: rgb(216, 216, 216);
+  border-radius: 50%;
+  margin-top: 100px;
+  display: flex;
+  /* justify-content: center; */
+  position: relative;
+  overflow: hidden;
+}
+.piechart .piechartleft .circle .p {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+
+  left: 50%;
+  transform: translate(-50%);
+  transform-origin: bottom left;
+}
+.piechart .piechartleft .circle .lime {
+  background-color: #96da93;
+  transform: rotate(5deg);
+}
+
+.piechart .piechartleft .circle .blue {
+  background-color: #34b7cb;
+
+  transform: rotate(60deg);
+}
+.piechart .piechartleft .circle .yellow {
+  background-color: #fdca5b;
+  transform: rotate(180deg);
+}
+.piechart .piechartleft .circle .orange {
+  background-color: #fc9b4e;
+  transform: rotate(240deg);
+}
+
+.piechart .piechartleft .circle .pink {
+  background-color: #e75389;
+  transform: rotate(298deg);
+}
+.piechart .piechartleft .circle .orangered {
+  background-color: #fe6e68;
+  transform: rotate(120deg);
+}
+.piechart .piechartleft .circle .center {
+  background-color: #ffffff;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+}
+.piechart .piechartleft .circle .center::after {
+  z-index: -2;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #e75389;
+
+  content: "";
+  border-radius: 50%;
+  transition: 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.2);
+  top: 0px;
+  left: 45px;
+
+  box-shadow: 0px 0px 2px 3px #ffffff;
+}
+.piechart .piechartleft .circle .center .centerimg {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: url(img/pink.png);
+  background-size: 100% 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+#lime:checked ~ .piechart .piechartleft .circle .center .centerimg {
+  background: url(img/yellow.png);
+  background-size: 100% 100%;
+  filter: hue-rotate(40deg);
+}
+#lime:checked ~ .piechart .piechartleft .circle .center {
+  box-shadow: inset 0px 0px 10px #96da93;
+}
+#pink:checked ~ .piechart .piechartleft .circle .center::after {
+  top: 0px;
+  left: 45px;
+  background-color: #e75389;
+}
+#pink:checked ~ .piechart .piechartleft .circle .center {
+  box-shadow: inset 0px 0px 10px #e75389;
+}
+#blue:checked ~ .piechart .piechartleft .circle .center::after {
+  top: 90px;
+  left: 135px;
+  background-color: #34b7cb;
+}
+#blue:checked ~ .piechart .piechartleft .circle .center {
+  box-shadow: inset 0px 0px 10px #34b7cb;
+}
+#lime:checked ~ .piechart .piechartleft .circle .center::after {
+  top: 15px;
+  left: 115px;
+  background-color: rgb(150, 218, 147);
+}
+#orange:checked ~ .piechart .piechartleft .circle .center::after {
+  top: 50px;
+  left: -2px;
+  background-color: #fc9b4e;
+}
+#orange:checked ~ .piechart .piechartleft .circle .center {
+  box-shadow: inset 0px 0px 10px #fc9b4e;
+}
+#yellow:checked ~ .piechart .piechartleft .circle .center::after {
+  top: 120px;
+  left: 20px;
+  background-color: #fdca5b;
+}
+#yellow:checked ~ .piechart .piechartleft .circle .center {
+  box-shadow: inset 0px 0px 10px #fdca5b;
+}
+#orangered:checked ~ .piechart .piechartleft .circle .center::after {
+  top: 138px;
+  left: 75px;
+  background-color: #fe6e68;
+}
+#orangered:checked ~ .piechart .piechartleft .circle .center {
+  box-shadow: inset 0px 0px 10px #fe6e68;
+}
+#blue:checked ~ .piechart .piechartleft .circle .center .centerimg {
+  background: url(img/blue.png);
+  background-size: 100% 100%;
+}
+#orange:checked ~ .piechart .piechartleft .circle .center .centerimg {
+  background: url(img/orange.png);
+  background-size: 100% 100%;
+}
+#yellow:checked ~ .piechart .piechartleft .circle .center .centerimg {
+  background: url(img/yellow.png);
+  background-size: 100% 100%;
+}
+#orangered:checked ~ .piechart .piechartleft .circle .center .centerimg {
+  background: url(img/orange.png);
+  filter: hue-rotate(-120deg);
+  background-size: 100% 100%;
+}
+#pink:checked ~ .piechart .piechartleft .circle .center .centerimg {
+  background: url(img/pink.png);
+  background-size: 100% 100%;
+}
