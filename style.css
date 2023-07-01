@@ -4,11 +4,14 @@
   box-sizing: border-box;
 }
 body {
-  background: rgb(38, 0, 84);
+  background: url(img/ffflux.svg);
   display: grid;
   place-content: center;
   height: 100vh;
   font-family: poppins;
+  background-size:  cover;
+  width: 100vw;
+  background-repeat: no-repeat;
 }
 input {
   display: none;
@@ -17,18 +20,26 @@ input {
   padding: 10px;
   display: flex;
   width: 250px;
+  min-width: 300px;
   overflow: hidden;
   position: relative;
+  /* background-color: red; */
 }
 input:checked ~ .piechart {
   width: 500px;
+  min-height: 100px;
   overflow: visible;
   transform: 0.4s !important;
 }
 .piechart .piechartleft {
   background: linear-gradient(135deg, rgb(224, 224, 224) 5%, white 0%);
   text-align: center;
-  padding: 30px;
+  padding: 7%;
+ 
+  width: 250px;
+  /* min-width: 100px; */
+ 
+
 }
 .piechart .piechartleft .text {
   margin-top: 23px;
